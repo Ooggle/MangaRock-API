@@ -17,8 +17,8 @@ response with good parameters :
 json{
 	"code":int,
 	"data":{
-		"mid":int,
-		"oid":string,
+		"mid":int, // this one is used for search in database to accelerate queries
+		"oid":string, // this one is used in the manga url
 		"name":string,
 		"author":string,
 		"rank":int,
@@ -37,13 +37,13 @@ json{
 		"alias":[string],
 		"characters":[mixed],
 		"authors":[mixed],
-		"rich_categories":[mixed],
+		"rich_categories":[mixed], // contains among other things the plain names of the categories
 		"extra":{
 			"Published":string,
 			"Serialization":string,
-			//more things comming...
+			// to complete
 		},
-		"mrs_series":null
+		"mrs_series":null // to complete
 	}
 }
 ```
@@ -53,12 +53,33 @@ json{
 https://api.mangarockhd.com/query/web{query_version}/pages?oid={chapter_oid}
 
 example : https://api.mangarockhd.com/query/web401/pages?oid=mrs-chapter-100364752<br/>
+response with good parameters :
+```js
+json{
+	"code":int,
+	"data":[string] // a table that contain all mri (encoded images) of the chapter
+}
+```
 <br/>
 
 - get characters information :<br/>
 https://api.mangarockhd.com/query/web{query_version}/character?oid={character_oid}
 
 example : https://api.mangarockhd.com/query/web401/character?oid=mrs-character-344901<br/>
+response with good parameters :
+```js
+json{
+	"code":int,
+	"oid":string,
+	"name":string,
+	"bio":string,
+	"thumbnail":string
+	"artworks":[string] // a table that contain all artwork links
+	"extra":{
+		// to complete
+      	}
+}
+```
 <br/>
 
 - get author information :<br/>
@@ -66,3 +87,21 @@ https://api.mangarockhd.com/query/web{query_version}/author?oid={author_oid}
 
 example : https://api.mangarockhd.com/query/web401/author?oid=mrs-author-100018057<br/>
 <br/>
+response with good parameters :
+```js
+json{
+	"code":int,
+	"oid":string,
+	"name":string,
+	"bio":string,
+	"thumbnail":string
+	"artworks":[string] // a table that contain all artwork links
+	"extra":{
+		"Alternate names":string,
+ 	        "Birthday":string,
+  	    	"Family name":string,
+    	     	"Given name":string
+		// to complete
+      	}
+}
+```
