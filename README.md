@@ -1,5 +1,5 @@
 # MangaRock-API
-A unofficial writing of the MangaRock API
+A unofficial writing of the MangaRock API documentation
 
 So i decided to write this little documentation with some examples cause i haven't see any documentation related to the new MangaRock API.
 
@@ -9,6 +9,7 @@ So i decided to write this little documentation with some examples cause i haven
 query_version = 401
 
 - get info of a manga :<br/>
+
 https://api.mangarockhd.com/query/web{query_version}/info?oid={series_oid}&last=0
 
 example : https://api.mangarockhd.com/query/web401/info?oid=mrs-serie-100266297<br/>
@@ -37,7 +38,7 @@ json{
 		"alias":[string],
 		"characters":[mixed],
 		"authors":[mixed],
-		"rich_categories":[mixed], // contains among other things the plain names of the categories
+		"rich_categories":[mixed], // contains among other things the plain name of the categories
 		"extra":{
 			"Published":string,
 			"Serialization":string,
@@ -50,6 +51,7 @@ json{
 <br/>
 
 - get pages of a chapter (in mri format) :<br/>
+
 https://api.mangarockhd.com/query/web{query_version}/pages?oid={chapter_oid}
 
 example : https://api.mangarockhd.com/query/web401/pages?oid=mrs-chapter-100364752<br/>
@@ -57,12 +59,13 @@ response with good parameters :
 ```js
 json{
 	"code":int,
-	"data":[string] // a table that contain all mri (encoded images) of the chapter
+	"data":[string] // a table that contain all mri (encoded images) url of the chapter
 }
 ```
 <br/>
 
 - get characters information :<br/>
+
 https://api.mangarockhd.com/query/web{query_version}/character?oid={character_oid}
 
 example : https://api.mangarockhd.com/query/web401/character?oid=mrs-character-344901<br/>
@@ -74,7 +77,7 @@ json{
 	"name":string,
 	"bio":string,
 	"thumbnail":string
-	"artworks":[string] // a table that contain all artwork links
+	"artworks":[string] // a table that contain all artwork url
 	"extra":{
 		// to complete
       	}
@@ -83,6 +86,7 @@ json{
 <br/>
 
 - get author information :<br/>
+
 https://api.mangarockhd.com/query/web{query_version}/author?oid={author_oid}
 
 example : https://api.mangarockhd.com/query/web401/author?oid=mrs-author-100018057<br/>
@@ -95,7 +99,7 @@ json{
 	"name":string,
 	"bio":string,
 	"thumbnail":string
-	"artworks":[string] // a table that contain all artwork links
+	"artworks":[string] // a table that contain all artwork url
 	"extra":{
 		"Alternate names":string,
  	        "Birthday":string,
