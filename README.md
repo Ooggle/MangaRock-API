@@ -12,6 +12,41 @@ query_version = 401
 https://api.mangarockhd.com/query/web{query_version}/info?oid={series_oid}&last=0
 
 example : https://api.mangarockhd.com/query/web401/info?oid=mrs-serie-100266297<br/>
+response with good parameters :
+```js
+json{
+	"code":int,
+	"data":{
+		"mid":int,
+		"oid":string,
+		"name":string,
+		"author":string,
+		"rank":int,
+		"msid":int,
+		"completed":bool,
+		"last_update":int,
+		"removed":bool,
+		"direction":int,
+		"total_chapters":int,
+		"description":string,
+		"categories":[int],
+		"chapters":[mixed],
+		"thumbnail":string,
+		"cover":string,
+		"artworks":[string],
+		"alias":[string],
+		"characters":[mixed],
+		"authors":[mixed],
+		"rich_categories":[mixed],
+		"extra":{
+			"Published":string,
+			"Serialization":string,
+			//more things comming...
+		},
+		"mrs_series":null
+	}
+}
+```
 <br/>
 
 - get pages of a chapter (in mri format) :<br/>
