@@ -16,7 +16,7 @@ example : https://api.mangarockhd.com/query/web401/info?oid=mrs-serie-100266297<
 response with good parameters :
 ```js
 json{
-	"code":int,
+	"code":int, // 0
 	"data":{
 		"mid":int, // this one is used for search in database to accelerate queries
 		"oid":string, // this one is used in the manga url
@@ -39,7 +39,7 @@ json{
 		"characters":[mixed],
 		"authors":[mixed],
 		"rich_categories":[mixed], // contains among other things the plain name of the categories
-		"extra":{
+		"extra":{ // all content in that array are optional and non-predictable (all content seems to be string), below are some examples
 			"Published":string,
 			"Serialization":string,
 			// to complete
@@ -58,13 +58,13 @@ example : https://api.mangarockhd.com/query/web401/pages?oid=mrs-chapter-1003647
 response with good parameters :
 ```js
 json{
-	"code":int,
+	"code":int, // 0
 	"data":[string] // a table that contain all mri (encoded images) url of the chapter
 }
 ```
 <br/>
 
-- get characters information :<br/>
+- get character information :<br/>
 
 https://api.mangarockhd.com/query/web{query_version}/character?oid={character_oid}
 
@@ -72,14 +72,21 @@ example : https://api.mangarockhd.com/query/web401/character?oid=mrs-character-3
 response with good parameters :
 ```js
 json{
-	"code":int,
+	"code":int, // 0
 	"oid":string,
 	"name":string,
 	"bio":string,
-	"thumbnail":string
-	"artworks":[string] // a table that contain all artwork url
-	"extra":{
-		// to complete
+	"thumbnail":string,
+	"artworks":[string], // a table that contain all artwork url
+	"extra":{ // all content in that array are optional and non-predictable (all content seems to be string), below are some examples
+		"Age":string,
+		"Date of birth":string,
+		"DOB":string,
+		"Height":string,
+		"Symbolizes":string,
+		"Weight":string,
+		"Zodiac sign":string
+		// etc
       	}
 }
 ```
@@ -94,18 +101,19 @@ example : https://api.mangarockhd.com/query/web401/author?oid=mrs-author-1000180
 response with good parameters :
 ```js
 json{
-	"code":int,
+	"code":int, // 0
 	"oid":string,
 	"name":string,
 	"bio":string,
-	"thumbnail":string
-	"artworks":[string] // a table that contain all artwork url
-	"extra":{
+	"thumbnail":string,
+	"artworks":[string], // a table that contain all artwork url
+	"extra":{ // all content in that array are optional and non-predictable (all content seems to be string), below are some examples
 		"Alternate names":string,
  	        "Birthday":string,
   	    	"Family name":string,
-    	     	"Given name":string
-		// to complete
+    	     	"Given name":string,
+		"Website":string
+		// etc
       	}
 }
 ```
