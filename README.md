@@ -14,6 +14,7 @@ https://api.mangarockhd.com/query/web{query_version}/info?oid={series_oid}&last=
 
 example : https://api.mangarockhd.com/query/web401/info?oid=mrs-serie-100266297<br/>
 response with good parameters :
+
 ```js
 json{
 	"code":int, // 0
@@ -56,6 +57,7 @@ https://api.mangarockhd.com/query/web{query_version}/pages?oid={chapter_oid}
 
 example : https://api.mangarockhd.com/query/web401/pages?oid=mrs-chapter-100364752<br/>
 response with good parameters :
+
 ```js
 json{
 	"code":int, // 0
@@ -70,6 +72,7 @@ https://api.mangarockhd.com/query/web{query_version}/character?oid={character_oi
 
 example : https://api.mangarockhd.com/query/web401/character?oid=mrs-character-344901<br/>
 response with good parameters :
+
 ```js
 json{
 	"code":int, // 0
@@ -99,6 +102,7 @@ https://api.mangarockhd.com/query/web{query_version}/author?oid={author_oid}
 example : https://api.mangarockhd.com/query/web401/author?oid=mrs-author-100018057<br/>
 <br/>
 response with good parameters :
+
 ```js
 json{
 	"code":int, // 0
@@ -129,6 +133,7 @@ query_version = 401
 https://api.mangarockhd.com/query/web{query_version}/mrs_filter
 
 payload format :
+
 ```js
 json{
 	"status":"all", // completed, ongoing or all
@@ -143,6 +148,7 @@ json{
 
 <br/>
 response with good parameters :
+
 ```js
 json{
 	"code": 0,
@@ -156,6 +162,7 @@ json{
 https://api.mangarockhd.com/query/web{query_version}/manga_detail
 
 payload format :
+
 ```js
 json{
 	"oids":{ // you can search for multiple oids in one request, way more fast
@@ -173,7 +180,8 @@ json{
 
 <br/>
 response with good parameters :
-```js
+
+```
 json{
 	"code":0,
 	"data":{
@@ -221,7 +229,7 @@ json{
 				"last_updated":int
 			}
 		},
-		"{series_oid}": {array} // depend on how many oids are in the request header
+		"{series_oid}":{array} // depend on how many oids are in the request header
 }
 ```
 
