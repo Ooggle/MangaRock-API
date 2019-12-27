@@ -131,17 +131,16 @@ https://api.mangarockhd.com/query/web{query_version}/mrs_filter
 payload format :
 ```js
 json{
-   "status":"all", // completed, ongoing or all
-   "genres":{ // list of genre to search for, can be empty
-	"mrs-genre-100291868":true, // true to include
-	"mrs-genre-304070":false // false to exclude
-   },
-   "rank":"all", // xx-xx or all
-   "order":"rank" // rank or name
+	"status":"all", // completed, ongoing or all
+	"genres":{ // list of genre to search for, can be empty
+		"mrs-genre-100291868":true, // true to include
+		"mrs-genre-304070":false // false to exclude
+	},
+	"rank":"all", // xx-xx or all
+	"order":"rank" // rank or name
 }
 ```
 
-example : https://api.mangarockhd.com/query/web401/author?oid=mrs-author-100018057<br/>
 <br/>
 response with good parameters :
 ```js
@@ -150,6 +149,84 @@ json{
 	"data": [string] // array of all mrs-serie corresponding to the search
 }
 ```
+<br/>
+
+- manga details :<br/>
+
+https://api.mangarockhd.com/query/web{query_version}/manga_detail
+
+payload format :
+```js
+json{
+	"oids":{ // you can search for multiple oids in one request, way more fast
+		"mrs-serie-100317564":0,
+		"mrs-serie-200083351":0
+		// etc
+	},
+	"sections":[ // list of sections to get, can be empty
+		"basic_info",
+		"summary"
+		// potentially others sections
+	]
+}
+```
+
+<br/>
+response with good parameters :
+```js
+json{
+	"code":0,
+	"data":{
+		"{series_oid}":{
+			"basic_info":{
+				"name":string,
+				"thumbnail":string,
+				"thumbnail_extra":{
+					"generated":bool,
+					"averageColor":string,
+					"textBackgroundColor":string,
+					"textColor":string
+				},
+				"cover":string,
+				"alias":[string],
+				"cover_extra":{
+					"generated":bool,
+					"averageColor":string,
+					"textBackgroundColor":string,
+					"textColor":string
+				},
+				"rank":int,
+				"removed":bool,
+				"author":string,
+				"completed":bool,
+				"direction":int,
+				"categories": [int],
+				"total_chapters": 15,
+				"description":string,
+				"release_frequency":{
+					"type":string,
+					"unit":string,
+					"amount":int
+				},
+				"mrs_series":null
+			},
+			"summary":{
+				"plot_points":[string],
+                		"key_genres":[string]
+			},
+			"default": {
+				"oid":string,
+				"mid":int,
+				"msid":int,
+				"last_updated":int
+			}
+		},
+		"{series_oid}": {array} // depend on how many oids are in the request header
+}
+```
+
+
+
 
 
 
