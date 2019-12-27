@@ -42,9 +42,9 @@ json{
 		"extra":{ // all content in that array are optional and non-predictable (all content seems to be string), below are some examples
 			"Published":string,
 			"Serialization":string,
-			// to complete
+			// etc
 		},
-		"mrs_series":null // to complete
+		"mrs_series":null
 	}
 }
 ```
@@ -117,3 +117,39 @@ json{
       	}
 }
 ```
+<br/>
+
+## Payload POST requests
+These requests use raw POST data in json form. You can use [Postman](https://www.getpostman.com/) to test it.
+
+query_version = 401
+
+- search for mangas :<br/>
+
+https://api.mangarockhd.com/query/web{query_version}/mrs_filter
+
+payload format :
+```js
+json{
+   "status":"all", // completed, ongoing or all
+   "genres":{ // list of genre to search for, can be empty
+	"mrs-genre-100291868":true, // true to include
+	"mrs-genre-304070":false // false to exclude
+   },
+   "rank":"all", // xx-xx or all
+   "order":"rank" // rank or name
+}
+```
+
+example : https://api.mangarockhd.com/query/web401/author?oid=mrs-author-100018057<br/>
+<br/>
+response with good parameters :
+```js
+json{
+	"code": 0,
+	"data": [string] // array of all mrs-serie corresponding to the search
+}
+```
+
+
+
