@@ -123,6 +123,22 @@ json{
 ```
 <br/>
 
+- get genre infos :<br/>
+
+https://api.mangarockhd.com/query/web{query_version}/genre?oid={genre_oid}
+
+example : https://api.mangarockhd.com/query/web401/genre?oid=mrs-genre-304070<br/>
+<br/>
+response with good parameters :
+
+```js
+json{
+	//to do
+}
+```
+<br/>
+
+
 ## Payload POST requests
 These requests use raw POST data in json form. You can use [Postman](https://www.getpostman.com/) to test it.
 
