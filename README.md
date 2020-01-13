@@ -52,6 +52,9 @@ json{
 <br/>
 
 - get pages of a chapter (in mri format) :<br/>
+```diff
+! Please note that this request no longer work.
+```
 
 https://api.mangarockhd.com/query/web{query_version}/pages?oid={chapter_oid}
 
