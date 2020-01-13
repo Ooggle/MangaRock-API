@@ -206,49 +206,49 @@ json{
 	"data":{
 		"{series_oid}":{
 			"basic_info":{
-				"name":string,
-				"thumbnail":string,
-				"thumbnail_extra":{
-					"generated":bool,
-					"averageColor":string,
-					"textBackgroundColor":string,
-					"textColor":string
-				},
-				"cover":string,
-				"alias":[string],
-				"cover_extra":{
-					"generated":bool,
-					"averageColor":string,
-					"textBackgroundColor":string,
-					"textColor":string
-				},
-				"rank":int,
-				"removed":bool,
-				"author":string,
-				"completed":bool,
-				"direction":int,
-				"categories": [int],
-				"total_chapters": 15,
-				"description":string,
-				"release_frequency":{
-					"type":string,
-					"unit":string,
-					"amount":int
-				},
-				"mrs_series":null
+			"name":string,
+			"thumbnail":string,
+			"thumbnail_extra":{
+				"generated":bool,
+				"averageColor":string,
+				"textBackgroundColor":string,
+				"textColor":string
 			},
-			"summary":{
-				"plot_points":[string],
-                		"key_genres":[string]
+			"cover":string,
+			"alias":[string],
+			"cover_extra":{
+				"generated":bool,
+				"averageColor":string,
+				"textBackgroundColor":string,
+				"textColor":string
 			},
-			"default": {
-				"oid":string,
-				"mid":int,
-				"msid":int,
-				"last_updated":int
-			}
+			"rank":int,
+			"removed":bool,
+			"author":string,
+			"completed":bool,
+			"direction":int,
+			"categories": [int],
+			"total_chapters": 15,
+			"description":string,
+			"release_frequency":{
+				"type":string,
+				"unit":string,
+				"amount":int
+			},
+			"mrs_series":null
 		},
-		"{series_oid}":{array} // depend on how many oids are in the request header
+		"summary":{
+			"plot_points":[string],
+               		"key_genres":[string]
+		},
+		"default": {
+			"oid":string,
+			"mid":int,
+			"msid":int,
+			"last_updated":int
+		}
+	},
+	"{series_oid}":{array} // depend on how many oids are in the request header
 }
 ```
 
