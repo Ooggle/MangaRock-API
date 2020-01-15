@@ -40,7 +40,7 @@ json{
 		"characters":[mixed],
 		"authors":[mixed],
 		"rich_categories":[mixed], // contains among other things the plain name of the categories
-		"extra":{ // all content in that array are optional and non-predictable (all content seems to be string), below are some examples
+		"extra":{ // all content in that array are optional and non-predictable (all content seems to be strings), below are some examples
 			"Published":string,
 			"Serialization":string,
 			// etc
@@ -84,7 +84,7 @@ json{
 	"bio":string,
 	"thumbnail":string,
 	"artworks":[string], // a table that contain all artwork url
-	"extra":{ // all content in that array are optional and non-predictable (all content seems to be string), below are some examples
+	"extra":{ // all content in that array are optional and non-predictable (all content seems to be strings), below are some examples
 		"Age":string,
 		"Date of birth":string,
 		"DOB":string,
@@ -114,7 +114,7 @@ json{
 	"bio":string,
 	"thumbnail":string,
 	"artworks":[string], // a table that contain all artwork url
-	"extra":{ // all content in that array are optional and non-predictable (all content seems to be string), below are some examples
+	"extra":{ // all content in that array are optional and non-predictable (all content seems to be strings), below are some examples
 		"Alternate names":string,
  	        "Birthday":string,
   	    	"Family name":string,
