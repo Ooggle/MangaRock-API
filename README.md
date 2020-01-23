@@ -93,7 +93,7 @@ json{
 		"Weight":string,
 		"Zodiac sign":string
 		// etc
-      	}
+	}
 }
 ```
 <br/>
@@ -116,12 +116,12 @@ json{
 	"artworks":[string], // a table that contain all artwork url
 	"extra":{ // all content in that array are optional and non-predictable (all content seems to be strings), below are some examples
 		"Alternate names":string,
- 	        "Birthday":string,
-  	    	"Family name":string,
-    	     	"Given name":string,
+	        "Birthday":string,
+		"Family name":string,
+		"Given name":string,
 		"Website":string
 		// etc
-      	}
+	}
 }
 ```
 <br/>
@@ -239,7 +239,7 @@ json{
 		},
 		"summary":{
 			"plot_points":[string],
-               		"key_genres":[string]
+			"key_genres":[string]
 		},
 		"default": {
 			"oid":string,
@@ -252,7 +252,7 @@ json{
 }
 ```
 
-
+Some other requests will be added, last update : 23/01/20
 
 
 
