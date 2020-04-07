@@ -6,13 +6,13 @@ So i decided to write this little documentation with some examples cause i haven
 
 ## GET requests
 
-query_version = 401
+query_version = 450
 
 - get info of a manga :<br/>
 
-https://api.mangarockhd.com/query/web{query_version}/info?oid={series_oid}&last=0
+https://web.mangarockhd.com/query/web{query_version}/info?oid={series_oid}&last=0
 
-example : https://api.mangarockhd.com/query/web401/info?oid=mrs-serie-100266297<br/>
+example : https://web.mangarockhd.com/query/web450/info?oid=mrs-serie-100266297<br/>
 response with good parameters :
 
 ```js
@@ -56,9 +56,9 @@ json{
 ! Please note that this request no longer work.
 ```
 
-https://api.mangarockhd.com/query/web{query_version}/pages?oid={chapter_oid}
+https://web.mangarockhd.com/query/web{query_version}/pages?oid={chapter_oid}
 
-example : https://api.mangarockhd.com/query/web401/pages?oid=mrs-chapter-100364752<br/>
+example : https://web.mangarockhd.com/query/web450/pages?oid=mrs-chapter-100364752<br/>
 response with good parameters :
 
 ```js
@@ -71,9 +71,9 @@ json{
 
 - get character information :<br/>
 
-https://api.mangarockhd.com/query/web{query_version}/character?oid={character_oid}
+https://web.mangarockhd.com/query/web{query_version}/character?oid={character_oid}
 
-example : https://api.mangarockhd.com/query/web401/character?oid=mrs-character-344901<br/>
+example : https://web.mangarockhd.com/query/web450/character?oid=mrs-character-344901<br/>
 response with good parameters :
 
 ```js
@@ -100,9 +100,9 @@ json{
 
 - get author information :<br/>
 
-https://api.mangarockhd.com/query/web{query_version}/author?oid={author_oid}
+https://web.mangarockhd.com/query/web{query_version}/author?oid={author_oid}
 
-example : https://api.mangarockhd.com/query/web401/author?oid=mrs-author-100018057<br/>
+example : https://web.mangarockhd.com/query/web450/author?oid=mrs-author-100018057<br/>
 <br/>
 response with good parameters :
 
@@ -128,9 +128,9 @@ json{
 
 - get genre infos :<br/>
 
-https://api.mangarockhd.com/query/web{query_version}/genre?oid={genre_oid}
+https://web.mangarockhd.com/query/web{query_version}/genre?oid={genre_oid}
 
-example : https://api.mangarockhd.com/query/web401/genre?oid=mrs-genre-304070<br/>
+example : https://web.mangarockhd.com/query/web450/genre?oid=mrs-genre-304070<br/>
 <br/>
 response with good parameters :
 
