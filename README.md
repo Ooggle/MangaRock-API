@@ -301,6 +301,6 @@ json{
 
 ## Thanks
 
-thanks to [@MeatReed](https://github.com/MeatReed) for all the application API tests and [@duyleekun](https://github.com/duyleekun/mangarock-ded) for the reverse enginerring to get the qtoken.
+thanks to [@MeatReed](https://github.com/MeatReed) for all the application API tests and [@duyleekun](https://github.com/duyleekun/mangarock-ded) for the reverse enginerring part to get the qtoken.
 
 
