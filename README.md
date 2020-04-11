@@ -8,12 +8,12 @@ So i decided to write this little documentation with some examples cause i haven
 
 query_version = 450
 
-- get info of a manga :<br/>
+- get info of a manga:<br/>
 
 https://web.mangarockhd.com/query/web{query_version}/info?oid={series_oid}&last=0
 
 example : https://web.mangarockhd.com/query/web450/info?oid=mrs-serie-100266297<br/>
-response with good parameters :
+response with good parameters:
 
 ```js
 json{
@@ -51,9 +51,9 @@ json{
 ```
 <br/>
 
-- get pages of a chapter (in mri format) :<br/>
+- get pages of a chapter (in mri format):<br/>
 ```diff
-! Please note that this request no longer work.
+! Please note that this request no longer work. check the application API instead.
 ```
 
 https://web.mangarockhd.com/query/web{query_version}/pages?oid={chapter_oid}
@@ -69,12 +69,12 @@ json{
 ```
 <br/>
 
-- get character information :<br/>
+- get character information:<br/>
 
 https://web.mangarockhd.com/query/web{query_version}/character?oid={character_oid}
 
 example : https://web.mangarockhd.com/query/web450/character?oid=mrs-character-344901<br/>
-response with good parameters :
+response with good parameters:
 
 ```js
 json{
@@ -98,13 +98,13 @@ json{
 ```
 <br/>
 
-- get author information :<br/>
+- get author information:<br/>
 
 https://web.mangarockhd.com/query/web{query_version}/author?oid={author_oid}
 
 example : https://web.mangarockhd.com/query/web450/author?oid=mrs-author-100018057<br/>
 <br/>
-response with good parameters :
+response with good parameters:
 
 ```js
 json{
@@ -126,13 +126,13 @@ json{
 ```
 <br/>
 
-- get genre infos :<br/>
+- get genre infos:<br/>
 
 https://web.mangarockhd.com/query/web{query_version}/genre?oid={genre_oid}
 
 example : https://web.mangarockhd.com/query/web450/genre?oid=mrs-genre-304070<br/>
 <br/>
-response with good parameters :
+response with good parameters:
 
 ```js
 json{
@@ -147,11 +147,11 @@ These requests use raw POST data in json form. You can use [Postman](https://www
 
 query_version = 401
 
-- search for mangas :<br/>
+- search for mangas:<br/>
 
 https://api.mangarockhd.com/query/web{query_version}/mrs_filter
 
-payload format :
+payload format:
 
 ```js
 json{
@@ -166,7 +166,7 @@ json{
 ```
 
 <br/>
-response with good parameters :
+response with good parameters:
 
 ```js
 json{
@@ -176,11 +176,11 @@ json{
 ```
 <br/>
 
-- manga details :<br/>
+- manga details:<br/>
 
 https://api.mangarockhd.com/query/web{query_version}/manga_detail
 
-payload format :
+payload format:
 
 ```js
 json{
@@ -198,9 +198,9 @@ json{
 ```
 
 <br/>
-response with good parameters :
+response with good parameters:
 
-```
+```js
 json{
 	"code":0,
 	"data":{
@@ -252,8 +252,55 @@ json{
 }
 ```
 
-Some other requests will be added, last update : 23/01/20
+
+## Application API (Android)
+These requests use headers. You can use [Postman](https://www.getpostman.com/) to test it.
+
+query_version = 402
+
+- get pages of a chapter (in mri format):<br/>
+
+http://api.mangarockhd.com/query/android{query_version}/pagesv2?oid={chapter_oid}
+
+header :
+
+```js
+{
+  'qtoken': token(url)
+}
+```
+the qtoken is generated using the following code (nodejs example):
+```js
+const XXH  = require('xxhashjs');
+
+var url = "https://api.mangarockhd.com/query/android402/pagesv2?oid=mrs-chapter-100350606"
+
+console.log('4'+XXH.h64(`${url}:425bd0ffd40bfaefbd184ea34e85d5042c8e74716f6e9f770cefbadba395782b`,0).toString(16))
+// this will output 4c4bb873793d42a73
+```
+
+<br/>
+response with good parameters:
+
+```js
+json{
+	"code":0,
+	"data":[{ // tab with no min and no max
+		"url":string
+	}, {
+		"url":string
+	}, {
+		"url":string
+	}, {
+		"url":string
+	... // there can be many more
+	}],
+}
+```
 
 
+## Thanks
+
+thanks to [@MeatReed](https://github.com/MeatReed) for all the application API tests and [@duyleekun](https://github.com/duyleekun/mangarock-ded) for the reverse enginerring to get the qtoken.
 
 
