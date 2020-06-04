@@ -1,8 +1,12 @@
 # MangaRock-API
+
+```diff
+! Archived since the website and app are no longer available. 
+```
+
 A unofficial writing of the MangaRock API documentation
 
-So i decided to write this little documentation with some examples cause i haven't see any documentation related to the new MangaRock API.
-
+So, I decided to write this little documentation with some examples cause i haven't see any documentation related to the new MangaRock API.
 
 ## GET requests
 
